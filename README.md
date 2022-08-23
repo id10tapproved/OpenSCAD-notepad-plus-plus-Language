@@ -1,58 +1,51 @@
 # OpenSCAD-notepad-plus-plus-Language
+
 This is a posting of Justblair's OpenSCAD/Notepad++ Language File (including useage guide) from Thingiverse: https://www.thingiverse.com/thing:15363
 
-#Summary This guide is for Windows Users.
+This guide is for Windows Users and has been adapted from Justblair's orignal guide
 
-I am growing to love OpenSCAD as a creative tool for 3D design but I do find that it's text editor lacks many of the basic features that I appreciate when writing code... Namely:
+## Introduction 
 
-Auto-Completion Syntax Highlighting Collapsible Outline levels Line Numbering Automatic Tabbing Search and Replace Block Tabbing using the tab key.
+OpenSCAD's text editor lacks many of the basic features that when writing code, namely:
 
-I was pleased to discover however that you don't need to put up with the standard text editor. There is a feature that allows you to conveniently use the text editor of your choice with OpenSCAD. My editor of choice is Notepad++ a fast well featured open source text editor. You can download it from http://notepad-plus-plus.org/
+- Auto-Completion
+- Syntax Highlighting 
+- Collapsible Outline levels 
+- Line Numbering 
+- Automatic Tabbing
+- Search and Replace
+- Block Tabbing using the tab key.
 
-Notepad++ supports many different programming languages but not unfortunately OpenSCAD. It does however have the facility that allows you to create your own language file which I have included here.
+You can download Notepad++ from http://notepad-plus-plus.org/
 
-This is definitely a work in progress as I have had to make a few compromises due to the limitations of Notepad++'s language editor. I dare say other more experienced coders opinions will differ as to how best to syntax code the OpenSCAD language.
+Notepad++ includes many different programming languages out-of-the-box, but not unfortunately OpenSCAD. It does however have the facility that allows you to create and import your own language file.
 
-I am currently working on adding auto-complete functionality to notepad++ as we speak. I have included a working though not complete file called openscad_removethisbitandcopy.xml. Currently most if not all functions will auto-complete, what is going to take me longer is adding call-tips to all the functions which would be nice though is not critical.
+This is a work in progress
 
-** Edits *** 13/5/2012 Added extension type to openscad.xml so that Notepad++ will now automatically detect language when .scad files are opened. Thankyou CrazyJaw, saved me some time there.
+## Installation
 
-Instructions Installing The Language File
+### Notepad++
 
-I assume that you have already downloaded and installed both OpenSCAD and Notepad++
+Assuming Notepad++ is installed, follow the below steps. (Instructions are copied from Notepad++  User Defined Language installation instructions found here: [notepad-plus-plus/userDefinedLanguages (github.com)](https://github.com/notepad-plus-plus/userDefinedLanguages#using-a-udl-from-this-collection)
 
-Download the openscad.xml file.
+For now, you have to manually install a new User Defined Language.
 
-Open Notepad++
+1. Download the [XML Language file](./openscad.xml) .
 
-In the view menu pick the User-Defined Dialogue... item
+   - From the file's page, click on either the "Raw" button (which will take you to a page where you can copy/paste the raw contents), or even easier, just click on the copy raw contents button, which will immediately place the raw contents in your clipboard for pasting.
+     ![image](https://user-images.githubusercontent.com/17455758/185504202-754541f7-ee6f-4e77-9a6b-2338448e0dfa.png)
+   - Do not just right click to try to download the file from either the as either of those right-click actions will download the GitHub web page for that file (which is not the UDL's XML file and will not work).
 
-In a moment the User-Defined dialogue box will appear. Select Import
+   2. Import the file by placing the file in your `userDefineLangs` folder and restarting Notepad++.  (It is also possible to use the User Defined Language dialog box and click **Import**, but that method is the "old way" and is no longer recommended: it's more steps, and harder to maintain, so there is no good reason to do it that way).  On Windows 10, this location is here: %AppData%\Notepad++\userDefineLangs. More details of what those steps entail can be found in the ["Import a UDL" section](https://npp-user-manual.org/docs/user-defined-language-system/#import-a-udl) of the official documentation.
+   3. Download the [autoCompletion XML file'](./autocompletion/openscad.xml)  and put it in the `autoCompletion\` sub-folder of your Notepad++ installation directory (C:\Program Files (x86)\Notepad++\autoCompletion).  More details can be found in the online User Manual in the ["autoCompletion"](https://npp-user-manual.org/docs/auto-completion/) and ["configuration files details"](https://npp-user-manual.org/docs/config-files/#other-configuration-files) sections.
+      - Auto-Complete can be activated by clicking CTRL-Space at any time.
+      - If you want Auto-Complete to be even more automatic, you can turn it on so that it will detect the functions as you type them... Go to Settings and click Preferences. When the dialogue box appears, select the Backup/Auto-Completions tab. Under the Auto-Completion section choose your preferred options.
 
-The Open dialogue box will appear, navigate to where you downloaded the openscad.xml file and open it.
+### OpenSCAD Configuration
 
-That should be the openscad language file installed. You cna check by looking under the Language menu in Notepad++. At the bottom should be Openscad. Using Notepad++ With OpenSCAD
-
-Open OpenSCAD, Create a new file and save it.
-
-In the Design menu select Automatic Reload and Compile
-
-In the View menu select Hide editor
-
-Leaving OpenSCAD running, now find your newly created .scad file in Windows Explorer, right hand click on it and select Edit with Notepad++
-
-Arrange both OpenSCAD and Notepad++ on your screen/s so that both can be seen at once. If you are using Windows Vista or 7 you can drag the title bars of the applications to the left and right sides of the screens to do this easily.
-
-Edit your .scad file in Notepad++. Each time you save the file (CTRL+S) you will see that OpenSCAD will recompile the object. You will need to choose the Openscad language from the Languages menu. You will also need to either modify the color scheme for the language file or chose a dark theme for notepad itself. Enjoy all the advanced text editing features of Notepad++ as well as syntax highlighting of your code!!!
-
-Enabling Auto-Completion in Notepad++
-
-Download the file named openscad_removethisbitandcopy.xml and copy it into either c:\Program Files\Notepad++\plugins\APIs (Windows 32bit) or C:\Program Files (x86)\Notepad++\plugins\APIs (Windows 64bit) or something like that depending on your setup.
-
-Rename the .xml file to openscad.xml
-
-Restart notepad and try it out. Auto-Complete can be activated by clicking CTRL-Space at any time.
-
-If you want Auto-Complete to be even more automatic, you can turn it on so that it will detect the functions as you type them... Go to Settings and click Preferences.
-
-When the dialogue box appears, select the Backup/Auto-Completions tab. Under the Auto-Completion section choose your preferred options.
+1. Open OpenSCAD, Create a new file and save it.
+2. In the Design menu select Automatic Reload and Compile
+3. In the View menu select Hide editor
+4. Leaving OpenSCAD running, now find your newly created .scad file in Windows Explorer, right hand click on it and select Edit with Notepad++
+5. Arrange both OpenSCAD and Notepad++ on your screen(s) so that both can be seen at once. If you are using Windows 7 or newer, you can drag the title bars of the applications to the left and right sides of the screens to do this easily.
+6. Edit your .scad file in Notepad++. Each time you save the file (CTRL+S) you will see that OpenSCAD will recompile the object. You will need to choose the Openscad language from the Languages menu. You will also need to either modify the color scheme for the language file or chose a dark theme for notepad itself. Enjoy all the advanced text editing features of Notepad++ as well as syntax highlighting of your code!!!
